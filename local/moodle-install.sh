@@ -30,3 +30,18 @@ SUPPORTEMAIL=moodle@example.com
   --shortname=$SHORTNAME \
   --summary=$SUMMARY \
   --agree-license
+
+echo "Installing npm packages..."
+cd /var/www/html
+npm i
+
+echo "Installing grunt-cli..."
+npm i --global grunt-cli
+
+echo "Building AMD modules (This may take forever)..."
+grunt amd --force
+
+echo "Generating test courses..."
+echo "NOT IMPLEMENTED!";
+
+echo "Done!"
